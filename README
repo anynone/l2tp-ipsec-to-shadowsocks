@@ -9,3 +9,4 @@
 ss端口: 8388
 ss加密算法: aes-256-cfb
 连接地址: docker inspect 容器ip查看容器ip地址，或者docker run开启容器增加--host参数，将绑定到127.0.0.1
+```

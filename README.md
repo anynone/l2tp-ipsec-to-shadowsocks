@@ -1,3 +1,5 @@
+当前项目将l2tp-ipsec代理转换为shadowsocks代理,如果你不想vpn全局代理网络请求，那么这个项目适合你
+
 1. #### 构建容器
 ```shell
    docker build -t anynone/l2tp-ipsec-to-shadowsocks:1.0

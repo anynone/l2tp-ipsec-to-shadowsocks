@@ -25,7 +25,7 @@ sleep 3
 
 # startup xl2tpd ppp daemon then send it a connect command
 (sleep 7 && echo "c myVPN" > /var/run/xl2tpd/l2tp-control) & \
-(sleep 30 && \
+(echo "wait start ss,modify route\n" && sleep 10 && \
 route add -host $VPN_SERVER_IPV4 gw 172.17.0.1 dev eth0 && \
 route del default && \
 route add default gw 1.0.0.1 && \

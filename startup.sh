@@ -31,7 +31,7 @@ route del default && \
 route add default gw 1.0.0.1 && \
 echo "`sed 's/nameserver.*/nameserver 1.0.0.1/g' /etc/resolv.conf`" > /etc/resolv.conf && \
 echo "route ready\n" && \
-/usr/bin/ssserver -k $SS_PASSWORD && \
+/usr/bin/ssserver -k ${SS_PASSWORD:-"123456"} -p ${SS_SERVER_PORT:-"8388"} -m ${SS_METHOD:-"aes-256-cfb"}  && \
 iptables -I INPUT -p tcp --dport 8388 -j ACCEPT
 ) & \
 exec /usr/sbin/xl2tpd -p /var/run/xl2tpd.pid -c /etc/xl2tpd/xl2tpd.conf -C /var/run/xl2tpd/l2tp-control -D
